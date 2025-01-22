@@ -1,8 +1,9 @@
-import {styled, Paper, Typography, Tooltip} from '@mui/material';
+import {styled, Paper, Typography} from '@mui/material';
 import type {Route} from './+types/home';
 import {Grid} from '@mui/system';
 import React from 'react';
 import './home.css';
+import {StackList} from '~/stack-list/stack-list';
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -12,14 +13,9 @@ export function meta({}: Route.MetaArgs) {
 }
 
 const Item = styled(Paper)(({theme}) => ({
-	backgroundColor: '#fff',
-	...theme.typography.body2,
 	padding: theme.spacing(1),
 	textAlign: 'center',
 	color: theme.palette.text.secondary,
-	...theme.applyStyles('dark', {
-		backgroundColor: '#1A2027',
-	}),
 }));
 
 const languageStack = [
@@ -83,28 +79,12 @@ export default function Home() {
 						I started programming when I was 11 years old. To me, software development isn't just a job;
 						It's a passion.
 					</p>
-					<Grid container spacing={{xs: 2, sm: 5}} margin={{xs: 2, sm: 5}} padding={{xs: 2, sm: 5}}>
-						<Grid size={12}>
-							<p>Languages: </p>
-						</Grid>
-						{
-							languageStack.map((item, key) => (
-								<Grid size={{md: 4, xs: 6}}>
-									<Tooltip title={item.description} key={key}>
-										<Paper>
-											<img alt={item.description} src={item.imageUrl}
-												 className="language-stack-image"/>
-										</Paper>
-									</Tooltip>
-								</Grid>
-							))
-						}
-					</Grid>
+					<StackList title="Languages:" list={languageStack}/>
 				</Item>
 			</Grid>
 			<Grid size={{xs: 12, md: 4}}>
 				<Item>
-					<img src="professional_photo_me_cartoonified.png"/>
+					<img alt='Professional photo' src="professional_photo_me_cartoonified.png"/>
 				</Item>
 			</Grid>
 		</Grid>
