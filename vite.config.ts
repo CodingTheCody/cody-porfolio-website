@@ -26,7 +26,6 @@ export default defineConfig({
 	optimizeDeps: {
 		include: [
 			'@mui/material',
-			'@mui/icons-material',
 			'@emotion/react',
 			'@emotion/styled',
 		],

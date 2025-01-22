@@ -32,10 +32,10 @@ export function Header() {
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<Link to="/">
+
 						<Typography
 							variant="h6"
 							noWrap
-							component="a"
 							sx={{
 								mr: 2,
 								display: {xs: 'none', md: 'flex'},
@@ -71,8 +71,8 @@ export function Header() {
 							onClose={handleCloseNavMenu}
 							sx={{display: {xs: 'block', md: 'none'}}}
 						>
-							{pages.map((page) => (
-								<Link to={page.link}>
+							{pages.map((page, index) => (
+								<Link to={page.link} key={index}>
 									<MenuItem key={page.label} onClick={handleCloseNavMenu}>
 										<Typography sx={{textAlign: 'center'}}>{page.label}</Typography>
 									</MenuItem>
@@ -84,7 +84,6 @@ export function Header() {
 						<Typography
 							variant="h5"
 							noWrap
-							component="a"
 							sx={{
 								mr: 2,
 								display: {xs: 'flex', md: 'none'},
@@ -100,8 +99,8 @@ export function Header() {
 						</Typography>
 					</Link>
 					<Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-						{pages.map((page) => (
-							<Link to={page.link}>
+						{pages.map((page, index) => (
+							<Link to={page.link} key={index}>
 								<Button
 									key={page.label}
 									onClick={handleCloseNavMenu}

@@ -57,8 +57,8 @@ export default function Home() {
 					</p>
 					<p>Here are some of the tech stack I am an expert in:</p>
 					<ImageList rowHeight={320} title='test' variant='quilted' cols={2}>
-						{techStack.map((item) => (
-							<Tooltip title={item.description}>
+						{techStack.map((item, key) => (
+							<Tooltip title={item.description} key={key}>
 								<ImageListItem key={item.imageUrl}>
 									<img src={item.imageUrl}/>
 								</ImageListItem>
@@ -75,3 +75,5 @@ export default function Home() {
 		</Grid>
 	</div>;
 }
+
+console.log('cody test', import.meta.env.VITE_FRONT_END_BASE_URI);
