@@ -1,7 +1,8 @@
-import {styled, Paper, Typography, ImageList, ImageListItem, Tooltip} from '@mui/material';
+import {styled, Paper, Typography, Tooltip} from '@mui/material';
 import type {Route} from './+types/home';
 import {Grid} from '@mui/system';
 import React from 'react';
+import './home.css';
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -20,6 +21,33 @@ const Item = styled(Paper)(({theme}) => ({
 		backgroundColor: '#1A2027',
 	}),
 }));
+
+const languageStack = [
+	{
+		description: 'TypeScript',
+		imageUrl: 'typescript-logo.png',
+	},
+	{
+		description: 'JavaScript',
+		imageUrl: 'js-logo.png',
+	},
+	{
+		description: 'C#',
+		imageUrl: 'csharp-logo.png',
+	},
+	{
+		description: 'HTML',
+		imageUrl: 'html-logo.png',
+	},
+	{
+		description: 'CSS',
+		imageUrl: 'css-logo.png',
+	},
+	{
+		description: 'SQL',
+		imageUrl: 'sql-logo.png',
+	}
+];
 
 const techStack = [
 	{
@@ -55,16 +83,23 @@ export default function Home() {
 						I started programming when I was 11 years old. To me, software development isn't just a job;
 						It's a passion.
 					</p>
-					<p>Here are some of the tech stack I am an expert in:</p>
-					<ImageList rowHeight={320} title='test' variant='quilted' cols={2}>
-						{techStack.map((item, key) => (
-							<Tooltip title={item.description} key={key}>
-								<ImageListItem key={item.imageUrl}>
-									<img src={item.imageUrl}/>
-								</ImageListItem>
-							</Tooltip>
-						))}
-					</ImageList>
+					<Grid container spacing={{xs: 2, sm: 5}} margin={{xs: 2, sm: 5}} padding={{xs: 2, sm: 5}}>
+						<Grid size={12}>
+							<p>Languages: </p>
+						</Grid>
+						{
+							languageStack.map((item, key) => (
+								<Grid size={{md: 4, xs: 6}}>
+									<Tooltip title={item.description} key={key}>
+										<Paper>
+											<img alt={item.description} src={item.imageUrl}
+												 className="language-stack-image"/>
+										</Paper>
+									</Tooltip>
+								</Grid>
+							))
+						}
+					</Grid>
 				</Item>
 			</Grid>
 			<Grid size={{xs: 12, md: 4}}>
