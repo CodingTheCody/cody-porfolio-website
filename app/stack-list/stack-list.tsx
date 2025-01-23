@@ -13,7 +13,7 @@ export function StackList(props: { title: string, list: { imageUrl: string, desc
 			</Grid>
 			{
 				props.list.map((item, key) => (
-					<Grid size={{md: 4, xs: 6}} key={key}>
+					<Grid size={{md: 4, xs: 6}} key={key} textAlign='center'>
 						<Paper style={{paddingTop: '10px'}} variant="elevation" elevation={4}>
 							<Typography variant="h6">
 								{item.description}

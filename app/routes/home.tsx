@@ -67,49 +67,53 @@ const techStack = [
 export default function Home() {
 	return <div>
 		<Grid container spacing={2}>
-			<Grid size={{xs: 12, md: 8}}>
-				<Grid>
-					<Item style={{height: '100%', textAlign: 'left'}} className="section-about-me">
-						<Typography variant="h3">
-							Cody Brooks
-						</Typography>
-						<Typography variant="h5">
-							Senior Software Engineer
-						</Typography>
-						<p>
-							Hi, I'm Cody Brooks, an experienced Full Stack Developer with over 12 years of professional
-							experience in crafting scalable, high-performance applications. I created my first online
-							application at the age of 11. For me, it's not just a job; it's a passion.
-						</p>
-						<p>
-							Over the years, I've honed my skills working with leading frameworks like React, Angular,
-							NodeJS, and ASP.NET. I specialize in designing responsive, modern applications that deliver
-							seamless user experiences across platforms.
-						</p>
-						<p>
-							Beyond coding, I enjoy staying on the cutting edge of technology, collaborating with teams,
-							and mentoring the next generation of software engineers.
-						</p>
-						<p>
-							Feel free to check out my work and get in touch—I’m always excited to connect!
-						</p>
-					</Item>
-				</Grid>
-				<Grid style={{marginTop: 15}}>
-					<Item>
-						<StackList title="Languages:" list={languageStack}/>
-					</Item>
-				</Grid>
-				<Grid style={{marginTop: 15}}>
-					<Item>
-						<StackList title="Frameworks:" list={techStack}/>
-					</Item>
-				</Grid>
-
+			<Grid>
+				<Item style={{height: '100%', textAlign: 'left'}} className="section-about-me">
+					<Grid container>
+						<Grid size={{md: 8}}>
+							<Typography variant="h3">
+								Cody Brooks
+							</Typography>
+							<Typography variant="h5">
+								Senior Software Engineer
+							</Typography>
+							<p>
+								Hi, I'm Cody Brooks, an experienced Full Stack Developer with over 12 years of
+								professional
+								experience in crafting scalable, high-performance applications. I created my first
+								online
+								application at the age of 11. For me, it's not just a job; it's a passion.
+							</p>
+							<p>
+								Over the years, I've honed my skills working with leading frameworks like React,
+								Angular,
+								NodeJS, and ASP.NET. I specialize in designing responsive, modern applications that
+								deliver
+								seamless user experiences across platforms.
+							</p>
+							<p>
+								Beyond coding, I enjoy staying on the cutting edge of technology, collaborating with
+								teams,
+								and mentoring the next generation of software engineers.
+							</p>
+							<p>
+								Feel free to check out my work and get in touch—I’m always excited to connect!
+							</p>
+						</Grid>
+						<Grid size={{md: 4}} alignContent='center'>
+							<img alt="Professional photo" src="professional_photo_me_cartoonified.png"/>
+						</Grid>
+					</Grid>
+				</Item>
 			</Grid>
-			<Grid size={{xs: 12, md: 4}}>
+			<Grid style={{marginTop: 15}}>
 				<Item>
-					<img alt="Professional photo" src="professional_photo_me_cartoonified.png"/>
+					<StackList title="Languages:" list={languageStack}/>
+				</Item>
+			</Grid>
+			<Grid>
+				<Item>
+					<StackList title="Frameworks:" list={techStack}/>
 				</Item>
 			</Grid>
 		</Grid>
