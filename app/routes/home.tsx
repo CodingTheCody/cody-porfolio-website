@@ -62,6 +62,10 @@ const techStack = [
 		description: 'ASP.NET',
 		imageUrl: 'aspnet-logo.png',
 	},
+	{
+		description: 'MongoDB',
+		imageUrl: 'mongodb-logo.webp',
+	},
 ];
 
 export default function Home() {
@@ -100,7 +104,7 @@ export default function Home() {
 								Feel free to check out my work and get in touch—I’m always excited to connect!
 							</p>
 						</Grid>
-						<Grid size={{md: 4}} alignContent='center'>
+						<Grid size={{md: 4}} alignContent="center">
 							<img alt="Professional photo" src="professional_photo_me_cartoonified.png"/>
 						</Grid>
 					</Grid>

@@ -1,5 +1,6 @@
 .stack-list-image {
     background: white;
     margin: auto;
-    max-height: 240px;
+    width: 240px;
+    height: 240px;
 }
