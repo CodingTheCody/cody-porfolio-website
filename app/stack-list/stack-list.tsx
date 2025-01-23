@@ -1,6 +1,7 @@
 import {Grid} from '@mui/system';
 import {Typography, Paper} from '@mui/material';
 import React from 'react';
+import './stack-list.css';
 
 export function StackList(props: { title: string, list: { imageUrl: string, description: string }[] }) {
 	return (
@@ -18,7 +19,7 @@ export function StackList(props: { title: string, list: { imageUrl: string, desc
 								{item.description}
 							</Typography>
 							<img alt={item.description} src={item.imageUrl}
-								 className="language-stack-image"/>
+								 className="stack-list-image"/>
 						</Paper>
 					</Grid>
 				))
