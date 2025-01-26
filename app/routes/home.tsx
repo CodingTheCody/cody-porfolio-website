@@ -1,4 +1,4 @@
-import {styled, Paper, Typography} from '@mui/material';
+import {Typography} from '@mui/material';
 import type {Route} from './+types/home';
 import {Grid} from '@mui/system';
 import React from 'react';
