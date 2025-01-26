@@ -27,6 +27,7 @@ export const links: Route.LinksFunction = () => [
 export function Layout({children}: { children: React.ReactNode }) {
 	const googleScript = `
 <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RW9KMVLM"></script>
 <script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
@@ -43,7 +44,6 @@ export function Layout({children}: { children: React.ReactNode }) {
 			<Meta/>
 			<Links/>
 		</head>
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RW9KMVLM"></script>
 		{process.env.NODE_ENV === 'production' ? googleScript : undefined}
 		<body>
 		{children}
