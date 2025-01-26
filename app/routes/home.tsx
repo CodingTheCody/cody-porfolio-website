@@ -118,5 +118,3 @@ export default function Home() {
 		</Grid>
 	</div>;
 }
-
-console.log('cody test', import.meta.env.VITE_FRONT_END_BASE_URI);
