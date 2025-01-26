@@ -45,7 +45,8 @@ export function Layout({children}: { children: React.ReactNode }) {
 			<Links/>
 		</head>
 		<body>
-		{process.env.NODE_ENV === 'production' ? googleScript : undefined}
+		{process.env.NODE_ENV === 'production' || true ?
+			<div dangerouslySetInnerHTML={{__html: googleScript}}></div> : undefined}
 		{children}
 		<ScrollRestoration/>
 		<Scripts/>
