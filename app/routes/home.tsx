@@ -4,6 +4,7 @@ import {Grid} from '@mui/system';
 import React from 'react';
 import './home.css';
 import {StackList} from '~/stack-list/stack-list';
+import {GridItem} from '~/grid-item/grid-item';
 
 export function meta({}: Route.MetaArgs) {
 	return [
@@ -11,12 +12,6 @@ export function meta({}: Route.MetaArgs) {
 		{name: 'description', content: 'Cody Brooks Portfolio Website'},
 	];
 }
-
-const Item = styled(Paper)(({theme}) => ({
-	padding: theme.spacing(1),
-	textAlign: 'center',
-	color: theme.palette.text.secondary,
-}));
 
 const languageStack = [
 	{
@@ -72,7 +67,7 @@ export default function Home() {
 	return <div>
 		<Grid container spacing={2}>
 			<Grid>
-				<Item style={{height: '100%', textAlign: 'left'}} className="section-about-me">
+				<GridItem style={{height: '100%', textAlign: 'left'}} className="section-about-me">
 					<Grid container>
 						<Grid size={{md: 8}}>
 							<Typography variant="h3">
@@ -108,17 +103,17 @@ export default function Home() {
 							<img alt="Professional photo" src="professional_photo_me_cartoonified.png"/>
 						</Grid>
 					</Grid>
-				</Item>
+				</GridItem>
 			</Grid>
 			<Grid style={{marginTop: 15}}>
-				<Item>
+				<GridItem>
 					<StackList title="Languages:" list={languageStack}/>
-				</Item>
+				</GridItem>
 			</Grid>
 			<Grid>
-				<Item>
+				<GridItem>
 					<StackList title="Frameworks:" list={techStack}/>
-				</Item>
+				</GridItem>
 			</Grid>
 		</Grid>
 	</div>;

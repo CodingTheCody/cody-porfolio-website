@@ -13,7 +13,8 @@ import React, {useCallback} from 'react';
 import {Link} from 'react-router';
 
 const pages = [
-	{label: 'Resume', link: '/resume'}
+	{label: 'Resume', link: '/resume'},
+	// {label: 'Contact', link: '/contact'},
 ];
 
 export function Header() {
