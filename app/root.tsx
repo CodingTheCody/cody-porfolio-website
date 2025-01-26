@@ -25,6 +25,16 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({children}: { children: React.ReactNode }) {
+	const googleScript = `
+<!-- Google tag (gtag.js) -->
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-D3RW9KMVLM');
+</script>
+	`;
 	return (
 		<html lang="en">
 		<head>
@@ -33,6 +43,8 @@ export function Layout({children}: { children: React.ReactNode }) {
 			<Meta/>
 			<Links/>
 		</head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3RW9KMVLM"></script>
+		{process.env.NODE_ENV === 'production' ? googleScript : undefined}
 		<body>
 		{children}
 		<ScrollRestoration/>
