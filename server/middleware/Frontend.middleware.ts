@@ -3,7 +3,6 @@ import {Request, Response, NextFunction} from 'express';
 import {createRequestHandler} from '@react-router/express';
 import {VITE_DEV_SERVER} from '../vite-dev-server';
 
-
 const reactRouterHandler = createRequestHandler({
 	build: VITE_DEV_SERVER
 		? () => VITE_DEV_SERVER.ssrLoadModule('virtual:react-router/server-build')

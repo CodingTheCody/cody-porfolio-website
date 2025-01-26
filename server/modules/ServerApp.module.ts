@@ -1,11 +1,9 @@
 import {MiddlewareConsumer, Module, NestModule} from '@nestjs/common';
-import {FrontendController} from '../controllers/Frontend.controller';
 import {FrontendMiddleware} from '../middleware/Frontend.middleware';
 
 @Module({
 	imports: [],
 	controllers: [
-		FrontendController,
 	],
 	providers: [
 
