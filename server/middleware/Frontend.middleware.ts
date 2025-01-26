@@ -7,7 +7,7 @@ const reactRouterHandler = createRequestHandler({
 	build: VITE_DEV_SERVER
 		? () => VITE_DEV_SERVER.ssrLoadModule('virtual:react-router/server-build')
 		// @ts-ignore
-		: await import('./build/server/index.js'),
+		: await import('../../../build/server/index.js'),
 });
 
 @Injectable()

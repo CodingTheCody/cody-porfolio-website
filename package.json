@@ -4,7 +4,6 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "build:server": "tsc --p ./server/tsconfig.json",
     "dev": "tsx watch --exclude \"./vite.config*\" --clear-screen=false --tsconfig ./server/tsconfig.json ./server/server.ts",
     "start": "tsx --tsconfig ./server/tsconfig.json ./server/server.ts",
     "typecheck": "react-router typegen && tsc"
