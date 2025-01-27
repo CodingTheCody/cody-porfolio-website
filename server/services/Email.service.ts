@@ -18,7 +18,7 @@ export class EmailService {
 		];
 		const sender = {
 			email: 'hello@codethecody.com',
-			name: 'Mailtrap Test',
+			name: 'Cody Portfolio Website',
 		};
 		await this.client.send({
 			from: sender,
