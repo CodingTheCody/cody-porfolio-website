@@ -11,12 +11,15 @@ export function meta({}: Route.MetaArgs) {
 	];
 }
 
+const defaultFormData = {
+	name: '',
+	email: '',
+	phoneNumber: '',
+	message: '',
+}
+
 export default function Contact() {
-	const [formData, setFormData] = useState({
-		name: '',
-		email: '',
-		message: '',
-	});
+	const [formData, setFormData] = useState(defaultFormData);
 
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
 		const {name, value} = e.target;
@@ -26,10 +29,23 @@ export default function Contact() {
 		}));
 	};
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		// Handle form submission (e.g., send data to a server or display a success message)
 		console.log('Form submitted:', formData);
+
+		try {
+			await fetch('/api/contact', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(formData),
+			});
+			setFormData(defaultFormData);
+		} catch (ex) {
+
+		}
 	};
 
 	return (

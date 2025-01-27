@@ -14,7 +14,7 @@ import {Link} from 'react-router';
 
 const pages = [
 	{label: 'Resume', link: '/resume'},
-	// {label: 'Contact', link: '/contact'},
+	{label: 'Contact', link: '/contact'},
 ];
 
 export function Header() {

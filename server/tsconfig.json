@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "module": "nodenext",
-    "declaration": true,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",

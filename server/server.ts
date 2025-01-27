@@ -1,10 +1,11 @@
+import 'dotenv/config';
 import compression from 'compression';
 import express from 'express';
 import morgan from 'morgan';
 import {NestFactory} from '@nestjs/core';
 import type {NestExpressApplication} from '@nestjs/platform-express';
-import {ServerAppModule} from './modules/ServerApp.module';
-import {VITE_DEV_SERVER} from './vite-dev-server';
+import {ServerAppModule} from './modules/ServerApp.module.js';
+import {VITE_DEV_SERVER} from './vite-dev-server.js';
 
 async function initialize() {
 	const app = await NestFactory.create<NestExpressApplication>(ServerAppModule, {
@@ -15,7 +16,7 @@ async function initialize() {
 	app.disable('x-powered-by');
 
 	if (VITE_DEV_SERVER) {
-		app.use(VITE_DEV_SERVER.middlewares);
+		app.use((await VITE_DEV_SERVER).middlewares);
 	} else {
 		app.use(
 			'/assets',

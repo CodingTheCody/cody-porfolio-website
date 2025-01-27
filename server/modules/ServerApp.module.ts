@@ -1,12 +1,14 @@
 import {MiddlewareConsumer, Module, NestModule} from '@nestjs/common';
-import {FrontendMiddleware} from '../middleware/Frontend.middleware';
+import {FrontendMiddleware} from '../middleware/Frontend.middleware.js';
+import {ContactController} from '../controllers/Contact.controller.js';
+import {EmailService} from '../services/Email.service.js';
 
 @Module({
-	imports: [],
 	controllers: [
+		ContactController,
 	],
 	providers: [
-
+		EmailService,
 	],
 })
 export class ServerAppModule implements NestModule {
@@ -16,3 +18,4 @@ export class ServerAppModule implements NestModule {
 			.forRoutes('*');
 	}
 }
+
