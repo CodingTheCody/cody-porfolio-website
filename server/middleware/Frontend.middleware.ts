@@ -22,10 +22,8 @@ export class FrontendMiddleware implements NestMiddleware {
 
 	public async use(req: Request, res: Response, next: NextFunction): Promise<any> {
 		if (req.baseUrl.indexOf('/api') === 0) {
-			console.log('using api route');
 			next();
 		} else {
-			console.log('using react router handler route', req.path);
 			(await this.getReactRouterHandler())(req, res, next);
 		}
 	}

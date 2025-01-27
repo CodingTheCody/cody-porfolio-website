@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nest build --tsc -p ./server/tsconfig.json && react-router build",
-    "dev": "nest start --tsc -p ./server/tsconfig.json",
+    "dev": "nest start --watch --tsc -p ./server/tsconfig.json",
     "start": "node ./server/dist/server",
     "typecheck": "react-router typegen && tsc"
   },
@@ -24,6 +24,7 @@
     "isbot": "5.1.17",
     "mailtrap": "^3.4.0",
     "morgan": "^1.10.0",
+    "nest-winston": "^1.10.2",
     "nodemailer": "^6.10.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",

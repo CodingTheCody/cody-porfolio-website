@@ -9,6 +9,7 @@
     "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
+    "declaration": true,
     "baseUrl": "./",
     "incremental": true,
     "forceConsistentCasingInFileNames": true,
