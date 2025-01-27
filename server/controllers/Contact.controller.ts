@@ -18,6 +18,8 @@ ${body.name}
 ${body.message}
 
 Phone number?: ${body.phoneNumber}
+
+Email: ${body.email}
 `;
 			const email = {
 				to: 'codyallenbrooks12@yahoo.com',
