@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
+    "build": "nest build --tsc -p ./server/tsconfig.json && react-router build",
     "dev": "nest start --tsc -p ./server/tsconfig.json",
-    "start": "tsx --tsconfig ./server/tsconfig.json ./server/server.ts",
+    "start": "node ./server/dist/server",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
