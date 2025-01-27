@@ -11,9 +11,10 @@ import {WinstonModule} from 'nest-winston';
 
 const winstonLoggerInstance = createLogger({
 	level: process.env.LOG_LEVEL || 'info',
-	format: format.json(),
+	format: format.combine(format.json(), format.timestamp(), format.errors({stack: true})),
 	transports: [new transports.Console()],
 });
+
 
 async function initialize() {
 
