@@ -61,6 +61,10 @@ const techStack = [
 		description: 'MongoDB',
 		imageUrl: 'mongodb-logo.webp',
 	},
+	{
+		description: 'NestJS',
+		imageUrl: 'nestjs-logo.svg',
+	},
 ];
 
 export default function Home() {
