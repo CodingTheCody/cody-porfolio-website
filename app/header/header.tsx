@@ -14,6 +14,7 @@ import {Link} from 'react-router';
 
 const pages = [
 	{label: 'Resume', link: '/resume'},
+	{label: 'Projects', link: '/projects'},
 	{label: 'Contact', link: '/contact'},
 ];
 
