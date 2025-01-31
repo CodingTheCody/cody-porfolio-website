@@ -6,14 +6,24 @@ import {NestFactory} from '@nestjs/core';
 import type {NestExpressApplication} from '@nestjs/platform-express';
 import {ServerAppModule} from './modules/ServerApp.module.js';
 import {VITE_DEV_SERVER} from './vite-dev-server.js';
+import {format, transports, createLogger} from 'winston';
+import {WinstonModule} from 'nest-winston';
+
+const winstonLoggerInstance = createLogger({
+	level: process.env.LOG_LEVEL || 'info',
+	format: format.json(),
+	transports: [new transports.Console()],
+});
 
 async function initialize() {
-	const app = await NestFactory.create<NestExpressApplication>(ServerAppModule, {
 
+	const app = await NestFactory.create<NestExpressApplication>(ServerAppModule, {
+		logger: WinstonModule.createLogger({instance: winstonLoggerInstance}),
 	});
 
 	app.use(compression());
 	app.disable('x-powered-by');
+	app.useLogger(winstonLoggerInstance);
 
 	if (VITE_DEV_SERVER) {
 		app.use((await VITE_DEV_SERVER).middlewares);
@@ -29,9 +39,9 @@ async function initialize() {
 
 	const port = process.env.PORT || 5173;
 	app.listen(port, () =>
-		console.log(`Express server listening at http://localhost:${port}`)
+		winstonLoggerInstance.info(`Express server listening at http://localhost:${port}`)
 	).catch((err) => {
-		console.error(err);
+		winstonLoggerInstance.error(err);
 	});
 
 }
