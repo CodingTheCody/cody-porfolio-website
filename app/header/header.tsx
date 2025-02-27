@@ -13,6 +13,7 @@ import React, {useCallback} from 'react';
 import {Link} from 'react-router';
 
 const pages = [
+	{label: 'Consulting', link: '/consulting'},
 	{label: 'Resume', link: '/resume'},
 	{label: 'Projects', link: '/projects'},
 	{label: 'Contact', link: '/contact'},
